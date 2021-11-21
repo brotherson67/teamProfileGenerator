@@ -30,4 +30,10 @@ WHEN I decide to finish building my team
 THEN I exit the application, and the HTML is generated\
 _________________________________________________________________________
 
- 
+STEP
+    * create HTML template 
+        - different boilerplate for each type of employee
+        - 
+    * create tests for index.html
+    * write create prompt to ask user questions
+    * 
