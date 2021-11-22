@@ -6,9 +6,16 @@ const inquirer = require ('inquirer');
 // create questions array for user
 let questions = [
     {
-        type: 'input',
-        name: 'manager-name', 
-        message: 'What is the managers name?'
+        type: 'list',
+        message: 'Would you like to add another employee?',
+        name: 'employeePosition', 
+        choices: ['Yes', 'No']
+    },
+    {
+        type: 'list',
+        message: 'What is the managers name?',
+        name: 'employeePosition', 
+        choices: ['Engineer', 'Intern']
     },
     {
         type: 'input',
@@ -32,13 +39,7 @@ let questions = [
         type: 'input',
         name: 'officeNumber', 
         message: 'What is their office number?'
-    },
-    {
-        type: 'list',
-        message: 'What is the managers name?',
-        name: 'employeePosition', 
-        choices: ['Engineer', 'Intern', "I don't have any more employees to add"]
-    },
+    }
 ]
 
 // classes 
