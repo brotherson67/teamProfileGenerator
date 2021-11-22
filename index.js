@@ -140,4 +140,14 @@ function addOrExit() {
         })
 }
 
-function addEmployee()
+function addEmployee() {
+    inquirer
+        .prompt(questions)
+        .then(function(data) {
+            
+        })
+}
+
+function init() {
+    startHTML()
+}
