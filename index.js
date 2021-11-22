@@ -56,10 +56,8 @@ class employee {
 
 
 // Functions
-
-const startHTML = () => {
-    let divContents = 
-    `<!DOCTYPE html>
+function startHTML() {
+    let divContents = `<!DOCTYPE html>
     <html lang="en">
     <head>
         <meta charset="UTF-8">
@@ -74,10 +72,10 @@ const startHTML = () => {
             <div>
                 <h1>Team Profiles</h1>
             </div>
-        </nav>`
-};
+        </nav>`;
+}
 
-const newDiv = (employeeTitle) => {
+function newDiv(employeeTitle) {
     const employeeName = employee.name;
     const employeePosition = employee.position;
     const employeeID = employee.employeeID;
@@ -85,7 +83,7 @@ const newDiv = (employeeTitle) => {
     const employeeGithub = employee.github;
     const employeeSchool = employee.school;
     let divContents = "";
-    divContents = 
+    divContents =
         `<div class="card" style="width: 18rem;">
             <h2>managers name</h2>>
             <h3>Manager</h3>
@@ -94,9 +92,9 @@ const newDiv = (employeeTitle) => {
                 <li>Email</li>
                 <li>Office Number</li>
             </ul>
-        </div>`
-    if (employeeTitle === "Engineer"){
-        divContents = 
+        </div>`;
+    if (employeeTitle === "Engineer") {
+        divContents =
             `<div class="card" style="width: 18rem;">
                 <h2>${employeeName}</h2>>
                 <h3>${employeePosition}</h3>
@@ -105,10 +103,10 @@ const newDiv = (employeeTitle) => {
                     <li>${employeeEmail}</li>
                     <li>${employeeGithub}</li>
                 </ul>
-            </div>`
+            </div>`;
     }
-    if (employeeTitle === "Intern"){
-        divContents = 
+    if (employeeTitle === "Intern") {
+        divContents =
             `<div class="card" style="width: 18rem;">
                 <h2>${employeeName}</h2>>
                 <h3>${employeePosition}</h3>
@@ -117,12 +115,11 @@ const newDiv = (employeeTitle) => {
                     <li>${employeeEmail}</li>
                     <li>${employeeSchool}</li>
                 </ul>
-            </div>`
+            </div>`;
     }
-};
+}
 
-const endHTML = () => {
-    let divContents = 
-    `</body>
-    </html>`
+function endHTML() {
+    let divContents = `</body>
+    </html>`;
 }
