@@ -58,7 +58,23 @@ class employee {
 // Functions
 
 const startHTML = () => {
-    // place all html until after nav div
+    let divContents = 
+    `<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- CSS only -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+        <title>profileGenerator</title>
+    </head>
+    <body>
+        <nav class=".navbar-brand text-center border-bottom">
+            <div>
+                <h1>Team Profiles</h1>
+            </div>
+        </nav>`
 };
 
 const newDiv = (employeeTitle) => {
@@ -69,28 +85,44 @@ const newDiv = (employeeTitle) => {
     const employeeGithub = employee.github;
     const employeeSchool = employee.school;
     let divContents = "";
-    if (employeeTitle === "Engineer"){
-        divContents = 
+    divContents = 
         `<div class="card" style="width: 18rem;">
-            <h2>${employeeName}</h2>>
-            <h3>${employeePosition}</h3>
+            <h2>managers name</h2>>
+            <h3>Manager</h3>
             <ul>
-                <li>${employeeID}</li>
-                <li>${employeeEmail}</li>
-                <li>${employeeGithub}</li>
+                <li>Employee ID</li>
+                <li>Email</li>
+                <li>Office Number</li>
             </ul>
         </div>`
+    if (employeeTitle === "Engineer"){
+        divContents = 
+            `<div class="card" style="width: 18rem;">
+                <h2>${employeeName}</h2>>
+                <h3>${employeePosition}</h3>
+                <ul>
+                    <li>${employeeID}</li>
+                    <li>${employeeEmail}</li>
+                    <li>${employeeGithub}</li>
+                </ul>
+            </div>`
     }
     if (employeeTitle === "Intern"){
         divContents = 
-        `<div class="card" style="width: 18rem;">
-            <h2>${employeeName}</h2>>
-            <h3>${employeePosition}</h3>
-            <ul>
-                <li>${employeeID}</li>
-                <li>${employeeEmail}</li>
-                <li>${employeeSchool}</li>
-            </ul>
-        </div>`
+            `<div class="card" style="width: 18rem;">
+                <h2>${employeeName}</h2>>
+                <h3>${employeePosition}</h3>
+                <ul>
+                    <li>${employeeID}</li>
+                    <li>${employeeEmail}</li>
+                    <li>${employeeSchool}</li>
+                </ul>
+            </div>`
     }
+};
+
+const endHTML = () => {
+    let divContents = 
+    `</body>
+    </html>`
 }
