@@ -77,6 +77,11 @@ function startHTML() {
                 <h1>Team Profiles</h1>
             </div>
         </nav>`;
+        fs.writeFile("./src/tests/team.html", html, function(err) {
+            if (err) {
+                console.log(err);
+            }
+        });
 }
 
 function newDiv(employeeTitle) {
@@ -144,7 +149,7 @@ function addEmployee() {
     inquirer
         .prompt(questions)
         .then(function(data) {
-            
+
         })
 }
 
