@@ -1,1 +1,3 @@
-import {employee} from 'employee'
+const fs = require('fs');
+const inquirer = require ('inquirer');
+const employeeType = require('./employeeTypes')
