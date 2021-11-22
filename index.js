@@ -9,7 +9,7 @@ let questions = [
         type: 'list',
         message: 'What is the managers name?',
         name: 'employeePosition', 
-        choices: ['Engineer', 'Intern']
+        choices: ['Engineer', 'Intern', 'Manager']
     },
     {
         type: 'input',
@@ -84,7 +84,8 @@ function startHTML() {
         });
 }
 
-function newDiv(employeeTitle) {
+function newDiv(employee) {
+
     const employeeName = employee.name;
     const employeePosition = employee.position;
     const employeeID = employee.employeeID;
@@ -144,12 +145,14 @@ function addOrExit() {
             }
         })
 }
-
+// I've heard of this thing called recursion and I tried to implement it here.
 function addEmployee() {
     inquirer
         .prompt(questions)
         .then(function(data) {
+            newDiv()
 
+            addOrExit()
         })
 }
 
