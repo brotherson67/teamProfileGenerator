@@ -7,12 +7,6 @@ const inquirer = require ('inquirer');
 let questions = [
     {
         type: 'list',
-        message: 'Would you like to add another employee?',
-        name: 'employeePosition', 
-        choices: ['Yes', 'No']
-    },
-    {
-        type: 'list',
         message: 'What is the managers name?',
         name: 'employeePosition', 
         choices: ['Engineer', 'Intern']
@@ -40,7 +34,16 @@ let questions = [
         name: 'officeNumber', 
         message: 'What is their office number?'
     }
-]
+];
+
+const continueQuestions = [
+    {
+        type: 'list',
+        message: 'Would you like to add another employee?',
+        name: 'addOrExit', 
+        choices: ['Yes', 'No']
+    }
+];
 
 // classes 
 class employee {
@@ -124,3 +127,17 @@ function endHTML() {
     let divContents = `</body>
     </html>`;
 }
+
+function addOrExit() {
+    inquirer
+        .prompt(continueQuestions)
+        .then(function(data){
+            if (data.addOrExit === 'Yes'){
+                addEmployee()
+            } else {
+                endHTML()
+            }
+        })
+}
+
+function addEmployee()
