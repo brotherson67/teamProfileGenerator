@@ -1,7 +1,12 @@
+The Goal of this project is to create a command line interfact that will prompt the user for information regarding "employees".
+Upon completion of all of the prompts a web page will be developed which will show an interface showing the gathered information
+The main focuses of this project are to implement both TTD and OOP
+
+---
+
 AS A manager
 I WANT to generate a webpage that displays my team's basic info
 SO THAT I have quick access to their emails and GitHub profiles
-
 
 GIVEN a command-line application that accepts user input
 
@@ -28,12 +33,5 @@ THEN I am prompted to enter the intern’s name, ID, email, and school, and I am
 
 WHEN I decide to finish building my team
 THEN I exit the application, and the HTML is generated\
-_________________________________________________________________________
 
-STEP
-    * create HTML template 
-        - different boilerplate for each type of employee
-        - 
-    * create tests for index.html
-    * write create prompt to ask user questions
-    * 
+---
