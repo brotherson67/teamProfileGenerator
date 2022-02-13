@@ -1,3 +1,0 @@
-const employeeType = require('../employeeTypes');
-
- 
