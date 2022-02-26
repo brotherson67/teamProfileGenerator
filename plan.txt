@@ -10,9 +10,18 @@ inquirer questions
     what is their email
     what is the location addy
     what is their office number 
+
+
+HOW TO ASK INITIAL QUESTIONS
+    There can be 3 main parts
+        initialize manager 
+        ask if they want to continue
+        ask employee possition and init ovject methods
+            or
+        end app and generate the page           
     
 
 
 FUTURE DEVELOPMENT 
     refactor into a react app
-    
+
