@@ -3,7 +3,8 @@ const fs = require("fs");
 const inquirer = require("inquirer");
 const { managerInfo, engineerInfo, interInfo } = require("./lib/index");
 
-managerInfo();
+console.log(managerInfo().role);
+
 // inquirer
 //   // can i inansiate an due the manager/other question methods here?
 
