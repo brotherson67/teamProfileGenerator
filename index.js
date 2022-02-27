@@ -1,8 +1,12 @@
 // global variables/imports
 const fs = require("fs");
 const inquirer = require("inquirer");
+const { Manager } = require("./lib");
 
-var inquirer = require("inquirer");
+const manager = new Manager();
+// console.log(manager.questions());
+manager.questions();
+
 inquirer
   // can i inansiate an due the manager/other question methods here?
 
