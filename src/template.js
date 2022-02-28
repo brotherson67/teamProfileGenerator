@@ -13,12 +13,7 @@ generateCard = employee => {
             <div class='card-header'>
             <h2 class='name'>${employee.name}</h2>
             <h2 class='title'><i class="bi bi-mortarboard-fill"></i> ${employee.getRole()}</h2>
-            </div>
-            <ul class='list-group list-group-flush'>
-            <li class='id list-group-item'>Employee ID: ${employee.id}</li>
-            <li class='email list-group-item'>Email: <a href="mailto:${employee.email}">${employee.email}</a></li>
-            <li class='info list-group-item'>` + lastItem + `</li>
-            </ul>
+            
         </section>
         `
 
