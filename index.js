@@ -72,4 +72,37 @@ const engineerQuestions = () => {
         });
 }
 
+const internQuestions = () => {
+    inquirer
+
+        .prompt([{
+                type: 'input',
+                name: "internName",
+                message: "What's the Intern's name?"
+            },
+            {
+                type: 'input',
+                name: "school",
+                message: "What school do they go to?"
+            },
+            {
+                type: "intput",
+                name: "internEmail",
+                message: "What's their email?"
+            },
+            {
+                type: "input",
+                name: "employeeId",
+                message: "what's their employee id?"
+            }
+        ])
+        .then((answers) => {
+            console.log(answers)
+        })
+        .catch((error) => {
+            console.log(err)
+
+        });
+}
+
 // managerQuestions()
