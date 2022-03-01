@@ -105,4 +105,25 @@ const internQuestions = () => {
         });
 }
 
-// managerQuestions()
+const initQuestions = () => {
+        inquirer
+        // 
+            .prompt([{
+                type: 'list',
+                name: "action",
+                message: "What's would you like to do?",
+                choices: [
+                    "Add Engineer",
+                    "Add Intern",
+                    "Quit"
+                ]
+            }, ])
+            .then((answers) => {
+                console.log(answers)
+            })
+            .catch((error) => {
+                console.log(err)
+
+            });
+    }
+    // managerQuestions()
