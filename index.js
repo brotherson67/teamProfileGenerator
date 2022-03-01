@@ -7,7 +7,6 @@ const { managerInfo, engineerInfo, interInfo } = require("./lib/index");
 
 const managerQuestions = () => {
     inquirer
-    // can i inansiate an due the manager/other question methods here?
 
         .prompt([{
                 type: 'input',
@@ -31,13 +30,46 @@ const managerQuestions = () => {
             }
         ])
         .then((answers) => {
-            // Use user feedback for... whatever!!
+            console.log(answers)
         })
         .catch((error) => {
-            if (error.isTtyError) {
-                // Prompt couldn't be rendered in the current environment
-            } else {
-                // Something else went wrong
-            }
+            console.log(err)
+
         });
 }
+
+
+const engineerQuestions = () => {
+    inquirer
+
+        .prompt([{
+                type: 'input',
+                name: "engineerName",
+                message: "What's the Engineers name?"
+            },
+            {
+                type: 'input',
+                name: "github",
+                message: "What's their github username?"
+            },
+            {
+                type: "intput",
+                name: "engineerEmail",
+                message: "What's their email?"
+            },
+            {
+                type: "input",
+                name: "employeeId",
+                message: "what's their employee id?"
+            }
+        ])
+        .then((answers) => {
+            console.log(answers)
+        })
+        .catch((error) => {
+            console.log(err)
+
+        });
+}
+
+// managerQuestions()
