@@ -5,6 +5,14 @@ const { managerInfo, engineerInfo, interInfo } = require("./lib/index");
 
 // console.log(managerInfo().role);
 
+// ADD FUNCTIONS TO CREATE OBJECTS HERE
+// POSSIBLE PLAN
+// CREATE FUNCITONS TO EXTEND CLASSES AND PASS IN VALUES FROM INQUIRER
+// FOR EACH CLASS RETURN AN HTML OBJECT THAT WILL BE PUSHED INTO
+// A MASTER HTML DOC
+
+
+
 const managerQuestions = () => {
     inquirer
 
