@@ -4,8 +4,6 @@ const { Manager, Engineer, Intern } = require("./lib/index");
 const generatePage = require("./src/page-template");
 const { writeFile } = require("./src/file-transfer");
 
-// console.log(managerInfo().role);
-
 const employees = [];
 
 const initQuestion = () => {
@@ -156,3 +154,12 @@ const internQuestions = () => {
       console.log(err);
     });
 };
+
+managerPrompt()
+  .then((employees) => {
+    return generatePage(employees);
+  })
+  .then((pageHTML) => {
+    console.log(pageHTML);
+    writeFile(pageHTML);
+  });
