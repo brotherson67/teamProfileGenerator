@@ -116,23 +116,27 @@ const internQuestions = () => {
 };
 
 const initQuestion = () => {
-  return (
-    inquirer
-      //
-      .prompt([
-        {
-          type: "list",
-          name: "action",
-          message: "What's would you like to do?",
-          choices: ["Add Engineer", "Add Intern", "Quit"],
-        },
-      ])
-      .then((answers) => {
-        console.log(answers);
-      })
-      .catch((error) => {
-        console.log(err);
-      })
-  );
+  return inquirer
+
+    .prompt([
+      {
+        type: "list",
+        name: "action",
+        message: "What's would you like to do?",
+        choices: ["Add Engineer", "Add Intern", "Quit"],
+      },
+    ])
+    .then((answer) => {
+      if (answer.action === "Finish Building Team") {
+        console.log("Done!"); // build web Page
+        return employees;
+      } else if (answer.action === "Engineer") {
+        return engineerQuestions();
+      } else if (answer.action === "Intern") {
+        return internQuestions();
+      }
+    })
+    .catch((error) => {
+      console.log(err);
+    });
 };
-// managerQuestions()
