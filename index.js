@@ -1,3 +1,4 @@
+// ALL THE PROJECT NEEDS TO DO IS STYLE THE RESULTANT HTML PAGE
 // global variables/imports
 const inquirer = require("inquirer");
 const { Manager, Engineer, Intern } = require("./lib/index");
