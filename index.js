@@ -14,7 +14,7 @@ const managerQuestions = () => {
     .prompt([
       {
         type: "input",
-        name: "managerName",
+        name: "name",
         message: "Hi what's your name?",
       },
       {
@@ -24,7 +24,7 @@ const managerQuestions = () => {
       },
       {
         type: "intput",
-        name: "managerEmail",
+        name: "email",
         message: "What's your email?",
       },
       {
@@ -36,9 +36,9 @@ const managerQuestions = () => {
     .then((answers) => {
       const manager = new Manager(
         answers.name,
+        answers.officeNumber,
         answers.email,
-        answers.employeeId,
-        answers.officeNumber
+        answers.employeeId
       );
       employees.push(manager);
       //then run function to see if user wants to add more employees
@@ -55,7 +55,7 @@ const engineerQuestions = () => {
     .prompt([
       {
         type: "input",
-        name: "engineerName",
+        name: "name",
         message: "What's the Engineers name?",
       },
       {
@@ -65,7 +65,7 @@ const engineerQuestions = () => {
       },
       {
         type: "intput",
-        name: "engineerEmail",
+        name: "email",
         message: "What's their email?",
       },
       {
@@ -77,9 +77,9 @@ const engineerQuestions = () => {
     .then((answers) => {
       const engineer = new Engineer(
         answers.name,
-        answers.employeeId,
+        answers.github,
         answers.email,
-        answers.github
+        answers.employeeId
       );
       employees.push(engineer);
 
