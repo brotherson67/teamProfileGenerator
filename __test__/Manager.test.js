@@ -1,10 +1,8 @@
-const Manager = require("../lib/Manager");
+const { Manager } = require("../lib");
 
 test("create manager object", () => {
   const manager = new Manager("John", 1, "john@fakemail.com", 100);
   expect(manager.name).toBe("John");
-  expect(manager.employeeId).toEqual(expect.any(Number));
-  expect(manager.email).toEqual(expect.any(String));
   expect(manager.officeNumber).toBe(100);
 });
 
