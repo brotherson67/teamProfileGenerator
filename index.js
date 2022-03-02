@@ -1,8 +1,8 @@
 // global variables/imports
 const inquirer = require("inquirer");
 const { Manager, Engineer, Intern } = require("./lib/index");
-const generatePage = require("./src/page-template");
-const { writeFile } = require("./src/file-transfer");
+const generatePage = require("./src/template");
+const { writeFile } = require("./src/transfer");
 
 const employees = [];
 
