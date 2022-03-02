@@ -6,11 +6,7 @@ const { writeFile } = require("./src/file-transfer");
 
 // console.log(managerInfo().role);
 
-// ADD FUNCTIONS TO CREATE OBJECTS HERE
-// POSSIBLE PLAN
-// CREATE FUNCITONS TO EXTEND CLASSES AND PASS IN VALUES FROM INQUIRER
-// FOR EACH CLASS RETURN AN HTML OBJECT THAT WILL BE PUSHED INTO
-// A MASTER HTML DOC
+const employees = [];
 
 const managerQuestions = () => {
   return inquirer
@@ -38,7 +34,15 @@ const managerQuestions = () => {
       },
     ])
     .then((answers) => {
-      console.log(answers);
+      const manager = new Manager(
+        answers.name,
+        answers.email,
+        answers.employeeId,
+        answers.officeNumber
+      );
+      employees.push(manager);
+      //then run function to see if user wants to add more employees
+      return initQuestion();
     })
     .catch((error) => {
       console.log(err);
@@ -111,7 +115,7 @@ const internQuestions = () => {
     });
 };
 
-const initQuestions = () => {
+const initQuestion = () => {
   return (
     inquirer
       //
