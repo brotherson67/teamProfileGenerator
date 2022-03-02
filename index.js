@@ -127,12 +127,12 @@ const initQuestion = () => {
       },
     ])
     .then((answer) => {
-      if (answer.action === "Finish Building Team") {
+      if (answer.action === "Quit") {
         console.log("Done!"); // build web Page
         return employees;
-      } else if (answer.action === "Engineer") {
+      } else if (answer.action === "Add Engineer") {
         return engineerQuestions();
-      } else if (answer.action === "Intern") {
+      } else if (answer.action === "Add Intern") {
         return internQuestions();
       }
     })
