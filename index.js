@@ -8,6 +8,32 @@ const { writeFile } = require("./src/file-transfer");
 
 const employees = [];
 
+const initQuestion = () => {
+  return inquirer
+
+    .prompt([
+      {
+        type: "list",
+        name: "action",
+        message: "What's would you like to do?",
+        choices: ["Add Engineer", "Add Intern", "Quit"],
+      },
+    ])
+    .then((answer) => {
+      if (answer.action === "Quit") {
+        console.log("Done!"); // build web Page
+        return employees;
+      } else if (answer.action === "Add Engineer") {
+        return engineerQuestions();
+      } else if (answer.action === "Add Intern") {
+        return internQuestions();
+      }
+    })
+    .catch((error) => {
+      console.log(err);
+    });
+};
+
 const managerQuestions = () => {
   return inquirer
 
@@ -125,32 +151,6 @@ const internQuestions = () => {
       employees.push(intern);
       //then run function to see if user wants to add more employees
       return addEmployee();
-    })
-    .catch((error) => {
-      console.log(err);
-    });
-};
-
-const initQuestion = () => {
-  return inquirer
-
-    .prompt([
-      {
-        type: "list",
-        name: "action",
-        message: "What's would you like to do?",
-        choices: ["Add Engineer", "Add Intern", "Quit"],
-      },
-    ])
-    .then((answer) => {
-      if (answer.action === "Quit") {
-        console.log("Done!"); // build web Page
-        return employees;
-      } else if (answer.action === "Add Engineer") {
-        return engineerQuestions();
-      } else if (answer.action === "Add Intern") {
-        return internQuestions();
-      }
     })
     .catch((error) => {
       console.log(err);
