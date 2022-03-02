@@ -96,7 +96,7 @@ const internQuestions = () => {
     .prompt([
       {
         type: "input",
-        name: "internName",
+        name: "name",
         message: "What's the Intern's name?",
       },
       {
@@ -106,7 +106,7 @@ const internQuestions = () => {
       },
       {
         type: "intput",
-        name: "internEmail",
+        name: "email",
         message: "What's their email?",
       },
       {
@@ -116,7 +116,15 @@ const internQuestions = () => {
       },
     ])
     .then((answers) => {
-      console.log(answers);
+      const intern = new Intern(
+        answers.name,
+        answers.school,
+        answers.email,
+        answers.employeeId
+      );
+      employees.push(intern);
+      //then run function to see if user wants to add more employees
+      return addEmployee();
     })
     .catch((error) => {
       console.log(err);
