@@ -75,10 +75,18 @@ const engineerQuestions = () => {
       },
     ])
     .then((answers) => {
-      console.log(answers);
+      const engineer = new Engineer(
+        answers.name,
+        answers.employeeId,
+        answers.email,
+        answers.github
+      );
+      employees.push(engineer);
+
+      return initQuestion();
     })
     .catch((error) => {
-      console.log(err);
+      console.log(error);
     });
 };
 
