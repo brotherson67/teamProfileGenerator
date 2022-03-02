@@ -27,7 +27,7 @@ const initQuestion = () => {
         return internQuestions();
       }
     })
-    .catch((error) => {
+    .catch((err) => {
       console.log(err);
     });
 };
@@ -68,7 +68,7 @@ const managerQuestions = () => {
       //then run function to see if user wants to add more employees
       return initQuestion();
     })
-    .catch((error) => {
+    .catch((err) => {
       console.log(err);
     });
 };
@@ -150,12 +150,12 @@ const internQuestions = () => {
       //then run function to see if user wants to add more employees
       return addEmployee();
     })
-    .catch((error) => {
+    .catch((err) => {
       console.log(err);
     });
 };
 
-managerPrompt()
+managerQuestions()
   .then((employees) => {
     return generatePage(employees);
   })
