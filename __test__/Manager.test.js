@@ -1,10 +1,14 @@
-const Manager = require("../js/employeeTypes");
+const Manager = require("../lib/Manager");
 
-test("are the values for the Name, address, email and id string ", () => {
-  const manager = new Manager();
+test("create manager object", () => {
+  const manager = new Manager("John", 1, "john@fakemail.com", 100);
+  expect(manager.name).toBe("John");
+  expect(manager.id).toEqual(expect.any(Number));
+  expect(manager.email).toEqual(expect.any(String));
+  expect(manager.officeNumber).toBe(100);
+});
 
-  expect(manager.name).toBe(expect.any(String));
-  expect(manager.employeeId).toBe(expect.any(String));
-  expect(manager.emailAddress).toBe(expect.any(String));
-  expect(manager.officeNumber).toBe(expect.any(String));
+test("get the manager role", () => {
+  const manager = new Manager("John", 1, "john@fakemail.com", 100);
+  expect(manager.getRole()).toBe("Manager");
 });
