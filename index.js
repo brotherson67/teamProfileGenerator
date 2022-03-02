@@ -1,7 +1,8 @@
 // global variables/imports
-const fs = require("fs");
 const inquirer = require("inquirer");
-const { managerInfo, engineerInfo, interInfo } = require("./lib/index");
+const { Manager, Engineer, Intern } = require("./lib/index");
+const generatePage = require("./src/page-template");
+const { writeFile } = require("./src/file-transfer");
 
 // console.log(managerInfo().role);
 
@@ -11,127 +12,123 @@ const { managerInfo, engineerInfo, interInfo } = require("./lib/index");
 // FOR EACH CLASS RETURN AN HTML OBJECT THAT WILL BE PUSHED INTO
 // A MASTER HTML DOC
 
-
-
 const managerQuestions = () => {
-    inquirer
+  return inquirer
 
-        .prompt([{
-                type: 'input',
-                name: "managerName",
-                message: "Hi what's your name?"
-            },
-            {
-                type: 'input',
-                name: "officeNumber",
-                message: "what's your office number"
-            },
-            {
-                type: "intput",
-                name: "managerEmail",
-                message: "What's your email?"
-            },
-            {
-                type: "input",
-                name: "employeeId",
-                message: "what's your employee id?"
-            }
-        ])
-        .then((answers) => {
-            console.log(answers)
-        })
-        .catch((error) => {
-            console.log(err)
-
-        });
-}
-
+    .prompt([
+      {
+        type: "input",
+        name: "managerName",
+        message: "Hi what's your name?",
+      },
+      {
+        type: "input",
+        name: "officeNumber",
+        message: "what's your office number",
+      },
+      {
+        type: "intput",
+        name: "managerEmail",
+        message: "What's your email?",
+      },
+      {
+        type: "input",
+        name: "employeeId",
+        message: "what's your employee id?",
+      },
+    ])
+    .then((answers) => {
+      console.log(answers);
+    })
+    .catch((error) => {
+      console.log(err);
+    });
+};
 
 const engineerQuestions = () => {
-    inquirer
+  return inquirer
 
-        .prompt([{
-                type: 'input',
-                name: "engineerName",
-                message: "What's the Engineers name?"
-            },
-            {
-                type: 'input',
-                name: "github",
-                message: "What's their github username?"
-            },
-            {
-                type: "intput",
-                name: "engineerEmail",
-                message: "What's their email?"
-            },
-            {
-                type: "input",
-                name: "employeeId",
-                message: "what's their employee id?"
-            }
-        ])
-        .then((answers) => {
-            console.log(answers)
-        })
-        .catch((error) => {
-            console.log(err)
-
-        });
-}
+    .prompt([
+      {
+        type: "input",
+        name: "engineerName",
+        message: "What's the Engineers name?",
+      },
+      {
+        type: "input",
+        name: "github",
+        message: "What's their github username?",
+      },
+      {
+        type: "intput",
+        name: "engineerEmail",
+        message: "What's their email?",
+      },
+      {
+        type: "input",
+        name: "employeeId",
+        message: "what's their employee id?",
+      },
+    ])
+    .then((answers) => {
+      console.log(answers);
+    })
+    .catch((error) => {
+      console.log(err);
+    });
+};
 
 const internQuestions = () => {
-    inquirer
+  return inquirer
 
-        .prompt([{
-                type: 'input',
-                name: "internName",
-                message: "What's the Intern's name?"
-            },
-            {
-                type: 'input',
-                name: "school",
-                message: "What school do they go to?"
-            },
-            {
-                type: "intput",
-                name: "internEmail",
-                message: "What's their email?"
-            },
-            {
-                type: "input",
-                name: "employeeId",
-                message: "what's their employee id?"
-            }
-        ])
-        .then((answers) => {
-            console.log(answers)
-        })
-        .catch((error) => {
-            console.log(err)
-
-        });
-}
+    .prompt([
+      {
+        type: "input",
+        name: "internName",
+        message: "What's the Intern's name?",
+      },
+      {
+        type: "input",
+        name: "school",
+        message: "What school do they go to?",
+      },
+      {
+        type: "intput",
+        name: "internEmail",
+        message: "What's their email?",
+      },
+      {
+        type: "input",
+        name: "employeeId",
+        message: "what's their employee id?",
+      },
+    ])
+    .then((answers) => {
+      console.log(answers);
+    })
+    .catch((error) => {
+      console.log(err);
+    });
+};
 
 const initQuestions = () => {
-        inquirer
-        // 
-            .prompt([{
-                type: 'list',
-                name: "action",
-                message: "What's would you like to do?",
-                choices: [
-                    "Add Engineer",
-                    "Add Intern",
-                    "Quit"
-                ]
-            }, ])
-            .then((answers) => {
-                console.log(answers)
-            })
-            .catch((error) => {
-                console.log(err)
-
-            });
-    }
-    // managerQuestions()
+  return (
+    inquirer
+      //
+      .prompt([
+        {
+          type: "list",
+          name: "action",
+          message: "What's would you like to do?",
+          choices: ["Add Engineer", "Add Intern", "Quit"],
+        },
+      ])
+      .then((answers) => {
+        console.log(answers);
+      })
+      .catch((error) => {
+        console.log(err);
+      })
+  );
+};
+// managerQuestions()
